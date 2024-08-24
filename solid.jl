@@ -38,9 +38,9 @@ Object(1:T,
 )
 
 l1 = @JLayer 1:T begin
-    outer = Object(1:T, JCircle(outer_radius; color = "white", action = :stroke,
-                                linewidth = 5.0), O)
-    inner = Object(1:T, JCircle(inner_radius; color = "white", action = :fill), O)
+    outer = Object(1:T, JEllipse(O, 2 * outer_radius, 2 * outer_radius;
+                                 color = "white", action = :stroke,
+                                 linewidth = 5.0))
 end
 
 act!(l1, Action(1:T, outer_anim(col_frac), translate()))
